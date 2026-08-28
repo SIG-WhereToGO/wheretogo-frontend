@@ -1,14 +1,14 @@
 .search-row {
   display: flex;
   gap: 10px;
-  max-width: 520px;
+  max-width: clamp(520px, 38vw, 720px);
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-md);
-  padding: 6px 6px 6px 18px;
+  padding: clamp(6px, 0.5vw, 9px) clamp(6px, 0.5vw, 9px) clamp(6px, 0.5vw, 9px) clamp(18px, 1.3vw, 26px);
   box-shadow: 0 20px 40px -18px rgba(18, 33, 61, 0.32);
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
@@ -23,19 +23,19 @@
   flex-shrink: 0;
   align-self: center;
   color: var(--ink-soft);
-  width: 18px;
-  height: 18px;
+  width: clamp(18px, 1.3vw, 24px);
+  height: clamp(18px, 1.3vw, 24px);
 }
 
 .search-row input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 14.5px;
+  font-size: clamp(14.5px, 1vw, 18px);
   font-family: inherit;
   color: var(--ink);
   background: transparent;
-  padding: 12px 6px;
+  padding: clamp(12px, 0.9vw, 17px) 6px;
   min-width: 0;
 }
 
@@ -48,8 +48,8 @@
   background: var(--ink);
   color: var(--white);
   font-weight: 600;
-  font-size: 14px;
-  padding: 0 22px;
+  font-size: clamp(14px, 1vw, 17px);
+  padding: 0 clamp(22px, 1.8vw, 32px);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background 0.18s ease, transform 0.18s ease;
@@ -73,8 +73,8 @@
 }
 
 .chip {
-  font-size: 12.5px;
-  padding: 7px 14px;
+  font-size: clamp(12.5px, 0.85vw, 15px);
+  padding: clamp(7px, 0.6vw, 10px) clamp(14px, 1.1vw, 19px);
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.65);
