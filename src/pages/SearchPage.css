@@ -1,11 +1,12 @@
 .hero {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 44px 40px 0;
   text-align: center;
   overflow: hidden;
-  min-height: 430px;
+  min-height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-bg {
@@ -21,7 +22,7 @@
   z-index: 1;
   max-width: 640px;
   margin: 0 auto;
-  padding-bottom: 120px;
+  width: 100%;
 }
 
 .headline {
