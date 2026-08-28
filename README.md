@@ -2,22 +2,6 @@
 
 여행 취향을 자연어 문장으로 입력하면, 백엔드 분석/추천 API와 연동해 맞춤 여행지 TOP 15를 카드 형태로 보여주는 프론트엔드입니다.
 
-## 실행 방법
-
-```bash
-npm install
-npm run dev       # 개발 서버 (기본 http://localhost:5173)
-npm run build     # 프로덕션 빌드 (dist/ 생성)
-npm run preview   # 빌드 결과 로컬 미리보기
-```
-
-## 환경 변수
-
-`.env.example`을 복사해 `.env`로 만들고 필요 시 API 주소를 바꿀 수 있습니다. 지정하지 않으면 아래 배포 주소를 기본값으로 사용합니다.
-
-```
-VITE_API_BASE_URL=https://wheretogo-backend-23293547159.asia-northeast3.run.app
-```
 
 ## 폴더 구조
 
@@ -41,7 +25,7 @@ src/
   App.jsx                # 라우팅 (react-router-dom)
 ```
 
-> **결과 화면(ResultsPage) 관련 안내**: 상단바/검색창/추천 태그 등은 만들지 않았고, 카드 그리드와 페이지네이션만 최소 컨테이너로 담아뒀습니다. 실제 서비스 화면(스크린샷)에서는 카드 부분만 `SpotCard.jsx`를 가져다 기존 레이아웃에 끼워 넣으시면 됩니다.
+> **결과 화면(ResultsPage) 관련 안내**: 카드 그리드와 페이지네이션만 최소 컨테이너로 담아뒀습니다. 실제 서비스에서는 카드 부분만 `SpotCard.jsx`를 가져다 기존 레이아웃에 끼워 넣으시면 됩니다.
 
 ## 카드 이미지 폴백 순서
 
@@ -59,7 +43,6 @@ src/
    - `GET /api/recommendations/{request_id}` → `{ input_analysis_info, recommend_spots_info }`
    - 진행 중에는 `ESTIMATED_MS`(기본 5초) 동안 진행률 바가 92%까지 서서히 채워지고, 실제 응답이 오면 100%로 마무리된 뒤 결과 화면으로 이동합니다. 응답이 더 늦어져도 92%에서 자연스럽게 대기합니다.
    - 요청이 실패하면 에러 화면 + "다시 시도하기" 버튼을 보여줍니다.
-3. **결과 화면**(`ResultsPage.jsx`)에서 정규화된 여행지 배열을 5개씩 페이지네이션하여 카드로 보여줍니다. (카드 그리드 + 페이지네이션 외의 UI는 포함하지 않았습니다.)
 
 ## 상세보기 연결 지점
 
