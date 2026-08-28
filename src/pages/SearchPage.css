@@ -1,0 +1,51 @@
+.hero {
+  position: relative;
+  padding: 44px 40px 0;
+  text-align: center;
+  overflow: hidden;
+  min-height: 430px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 120px;
+}
+
+.headline {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.32;
+  color: var(--ink);
+  margin: 0 0 14px;
+  letter-spacing: -1px;
+}
+
+.headline .accent {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0 0 30px;
+  line-height: 1.55;
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 26px;
+  }
+  .hero {
+    padding: 36px 22px 0;
+  }
+}

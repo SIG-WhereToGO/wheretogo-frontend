@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --ink: #12213d;
+  --ink-soft: #3c4e70;
+  --tide: #6e93c4;
+  --tide-light: #b9cee8;
+  --mist: #eaf0f7;
+  --paper: #f8f6f1;
+  --accent: #2f6fe0;       /* 파랑 계열 강조색 */
+  --accent-soft: #bbd3f5;
+  --line: #dce3ec;
+  --white: #ffffff;
+  --danger: #d64545;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 9px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.app-stage {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.card-shell {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -30px rgba(18, 33, 61, 0.35);
+  position: relative;
+}
+
+/* ---------- 공통 상단바 ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar .pin {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.topbar .pin svg {
+  width: 17px;
+  height: 17px;
+}
+
+.topbar-text .eyebrow {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+
+.topbar-text .sub {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 18px 20px;
+  }
+}

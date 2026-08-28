@@ -1,0 +1,57 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.page-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.page-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.page-arrow:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.page-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.page-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.page-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: var(--line);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.page-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
