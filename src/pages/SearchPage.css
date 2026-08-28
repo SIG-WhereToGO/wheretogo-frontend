@@ -1,5 +1,7 @@
 .hero {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 44px 40px 0;
   text-align: center;
   overflow: hidden;

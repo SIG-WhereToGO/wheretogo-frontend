@@ -6,7 +6,7 @@
   --tide: #6e93c4;
   --tide-light: #b9cee8;
   --mist: #eaf0f7;
-  --paper: #f8f6f1;
+  --paper: #ffffff;
   --accent: #2f6fe0;       /* 파랑 계열 강조색 */
   --accent-soft: #bbd3f5;
   --line: #dce3ec;
@@ -47,14 +47,12 @@ a {
 
 .app-stage {
   width: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 .card-shell {
   width: 100%;
-  min-height: 100vh;
   background: transparent;
   border: none;
   border-radius: 0;
