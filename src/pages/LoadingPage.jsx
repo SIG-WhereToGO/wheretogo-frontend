@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import { analyzeQuery, fetchRecommendations } from '../api/spots';
-import { normalizeSpots, normalizeUserTags } from '../utils/normalize';
+import { normalizeSpots, normalizeAnalyzeTags } from '../utils/normalize';
 import './LoadingPage.css';
 
 const RING_CIRCUMFERENCE = 326.7;
@@ -72,7 +72,7 @@ export default function LoadingPage() {
         if (cancelled) return;
 
         const spots = normalizeSpots(recRes?.recommend_spots_info);
-        const userTags = normalizeUserTags(recRes?.input_analysis_info?.user_tags);
+        const userTags = normalizeAnalyzeTags(recRes?.input_analysis_info?.user_tags);
 
         cancelAnimationFrame(rafRef.current);
         setProgress(1);
