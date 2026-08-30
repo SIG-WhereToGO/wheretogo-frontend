@@ -1,3 +1,5 @@
+import "./TopBar.css"
+
 export default function TopBar({ eyebrow = '어디고', sub = '나에게 딱 맞는 여행지 추천' }) {
   return (
     <div className="topbar">

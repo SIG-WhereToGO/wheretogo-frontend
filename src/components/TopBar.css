@@ -1,0 +1,39 @@
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.pin {
+  flex-shrink: 0;
+
+  width: clamp(20px, 2vw, 24px);
+  height: clamp(20px, 2vw, 24px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin svg {
+  width: 100%;
+  height: 100%;
+}
+
+.topbar-text {
+  margin-left: clamp(8px, 1vw, 12px);
+}
+
+.eyebrow {
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sub {
+  margin-top: 2px;
+
+  font-size: clamp(9px, 0.9vw, 12px);
+  line-height: 1.2;
+}
