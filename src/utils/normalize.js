@@ -97,7 +97,8 @@ export function normalizeSpots(recommendSpotsInfo) {
         raw: entry, // 상세보기 연결 시 원본 데이터가 필요할 수 있어 함께 보관
       };
     })
-    .sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+    .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+    .slice(0, 15);
 }
 
 /**
