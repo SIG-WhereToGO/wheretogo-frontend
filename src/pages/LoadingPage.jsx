@@ -68,7 +68,7 @@ export default function LoadingPage() {
 
         // 2) request_id로 추천 결과(TOP 15 + 상세정보) 조회
         const recRes = await fetchRecommendations(requestId);
-
+        
         if (cancelled) return;
 
         const spots = normalizeSpots(recRes?.recommend_spots_info);

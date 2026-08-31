@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import TopBar from '../components/TopBar'
 import SpotCard from '../components/SpotCard';
 import Pagination from '../components/Pagination';
+import SearchBar from '../components/ResultSearch/ResultSearchBar';
+import UserTags from '../components/ResultSearch/UserTags';
 import './ResultsPage.css';
 
 const PAGE_SIZE = 5;
@@ -12,7 +15,12 @@ const PAGE_SIZE = 5;
 export default function ResultsPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { spots } = location.state || {};
+  const {
+    query,
+    spots,
+    userTags,
+    region,
+  } = location.state || {};
 
   const [page, setPage] = useState(0);
 
@@ -41,28 +49,51 @@ export default function ResultsPage() {
     console.log('상세보기 클릭:', spot);
   };
 
-  return (
-    <div className="results-stage">
-      {spots.length === 0 ? (
-        <div className="empty-state">
-          <p>조건에 맞는 여행지를 찾지 못했어요.</p>
-        </div>
-      ) : (
-        <>
-          <div className="spot-grid">
-            {pagedSpots.map((spot, i) => (
-              <SpotCard
-                key={spot.id ?? `${page}-${i}`}
-                rank={page * PAGE_SIZE + i + 1}
-                spot={spot}
-                onViewDetail={handleViewDetail}
-              />
-            ))}
-          </div>
+   const handleSearch = (newQuery) => {
+    navigate('/loading', {
+      state: {
+        query: newQuery,
+      },
+    });
+  };
 
-          <Pagination page={page} pageCount={pageCount} onChange={setPage} />
-        </>
-      )}
+  return (
+    <div className="app-stage">
+      <div className="card-shell">
+        <TopBar/>
+
+        <div className="results-stage">
+      
+          <SearchBar onSearch={handleSearch}/>
+
+          <UserTags
+            companionTags={userTags?.companionTags}
+            styleTags={userTags?.styleTags}
+          />
+
+          {spots.length === 0 ? (
+            <div className="empty-state">
+              <p>조건에 맞는 여행지를 찾지 못했어요.</p>
+            </div>
+          ) : (
+            <>
+              <div className="spot-grid">
+                {pagedSpots.map((spot, i) => (
+                  <SpotCard
+                    key={spot.id ?? `${page}-${i}`}
+                    rank={page * PAGE_SIZE + i + 1}
+                    spot={spot}
+                    onViewDetail={handleViewDetail}
+                  />
+                ))}
+              </div>
+
+              <Pagination page={page} pageCount={pageCount} onChange={setPage} />
+            </>
+          )}
+        </div>
+      </div>
     </div>
+    
   );
 }

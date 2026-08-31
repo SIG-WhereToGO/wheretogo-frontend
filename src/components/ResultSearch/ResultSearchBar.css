@@ -4,7 +4,7 @@
   gap: 8px;
 
   width: 100%;
-  max-width: clamp(280px, 30vw, 365px);;
+  max-width: clamp(500px, 60vw, 650px);
   height: 38px;
   box-sizing: border-box;
 
