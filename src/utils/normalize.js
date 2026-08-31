@@ -78,7 +78,7 @@ export function normalizeSpots(recommendSpotsInfo) {
                           category: t.category,
                           name: getLabelName(t.name),
                         }))
-                        .filter((t) => t.category === "companion" && COMPANION_TAGS[t.name][t.name]),
+                        .filter((t) => t.category === "companion" && COMPANION_TAGS[t.name]),
         styleTags: toArray(info.spot_tags)
                     .map((t) => ({
                       id: t.tag_id,
@@ -86,7 +86,9 @@ export function normalizeSpots(recommendSpotsInfo) {
                       name: getLabelName(t.name),
                     }))
                     .filter((t) => t.category === "style" && SPOT_STYLE_TAGS[t.name]),
-    
+        tags: toArray(info.spot_tags)
+              .map((t) => (getLabelName(t.name))),
+
         usageInfo: toArray(info.usage_info),
         detailInfo: toArray(info.detail_info),
         petInfo: toArray(info.pet_info),

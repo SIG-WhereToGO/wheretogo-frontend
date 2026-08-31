@@ -92,6 +92,8 @@ export default function LoadingPage() {
           });
         }, 400);
       } catch (err) {
+        console.error('LoadingPage 오류:', err);
+        console.error('오류 stack:', err.stack);
         if (cancelled) return;
         cancelAnimationFrame(rafRef.current);
         setErrorMsg(err.message || '알 수 없는 오류가 발생했어요.');
