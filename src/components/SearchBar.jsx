@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './SearchBar.css';
 
-const SUGGESTIONS = ['조용한 바다', '신나는 체험', '가을 단풍', '감성 카페 거리'];
+const SUGGESTIONS = ['부산에서 조용한 바다', '대구에서 신나는 체험', '대전에서 가을 단풍', '서울에서 감성 카페 거리'];
 
 export default function SearchBar({
   initialValue = '',
-  placeholder = '검색어를 입력해주세요 (예: 부산에서 조용한 바다 여행지)',
+  placeholder = '지역명과 함께 검색어를 입력해주세요 (예: 부산에서 조용한 바다 여행지)',
   onSearch,
   showSuggestions = true,
 }) {
