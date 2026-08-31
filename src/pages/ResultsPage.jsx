@@ -5,6 +5,7 @@ import SpotCard from '../components/SpotCard';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/ResultSearch/ResultSearchBar';
 import UserTags from '../components/ResultSearch/UserTags';
+import SpotDetailModal from '../components/SpotDetailModal';
 import './ResultsPage.css';
 
 const PAGE_SIZE = 5;
@@ -23,6 +24,7 @@ export default function ResultsPage() {
   } = location.state || {};
 
   const [page, setPage] = useState(0);
+  const [selectedRecommendation, setSelectedRecommendation] = useState(null);
 
   useEffect(() => {
     if (!spots) {
@@ -44,9 +46,7 @@ export default function ResultsPage() {
   if (!spots) return null;
 
   const handleViewDetail = (spot) => {
-    // TODO: 상세보기 팝업/페이지를 여기에 연결하세요.
-    // spot.raw 에 백엔드 원본 응답(spot_id, info 전체 등)이 그대로 들어있습니다.
-    console.log('상세보기 클릭:', spot);
+    setSelectedRecommendation(spot.raw ?? spot);
   };
 
    const handleSearch = (newQuery) => {
@@ -59,12 +59,13 @@ export default function ResultsPage() {
 
   return (
     <div className="app-stage">
+
       <div className="card-shell">
-        <TopBar/>
+        <TopBar />
 
         <div className="results-stage">
-      
-          <SearchBar onSearch={handleSearch}/>
+
+          <SearchBar onSearch={handleSearch} />
 
           <UserTags
             companionTags={userTags?.companionTags}
@@ -88,12 +89,23 @@ export default function ResultsPage() {
                 ))}
               </div>
 
-              <Pagination page={page} pageCount={pageCount} onChange={setPage} />
+              <Pagination
+                page={page}
+                pageCount={pageCount}
+                onChange={setPage}
+              />
             </>
           )}
+
         </div>
       </div>
+
+      <SpotDetailModal
+        open={Boolean(selectedRecommendation)}
+        recommendation={selectedRecommendation}
+        onClose={() => setSelectedRecommendation(null)}
+      />
+
     </div>
-    
   );
 }
