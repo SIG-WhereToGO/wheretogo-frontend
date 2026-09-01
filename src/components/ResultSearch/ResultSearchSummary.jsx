@@ -16,12 +16,7 @@ export default function ResultSearchSummary({
           <span className="result-query-text">{query}</span>
         </div>
       )}
-      {region && (
-        <div className="result-region">
-          <span className="result-region-label">지역</span>
-          <span className="result-region-text">{region}</span>
-        </div>
-      )}
+      
       <UserAnalyze
         region={region}
         companionTags={companionTags}

@@ -3,8 +3,8 @@
   align-items: center;
   gap: 8px;
 
-  width: 100%;
-  max-width: clamp(500px, 60vw, 650px) !important;
+  width: 65%;
+ 
   height: clamp(39px, 3vw, 42px) !important;
   box-sizing: border-box;
 
@@ -48,7 +48,7 @@
   background: transparent;
 
   font-family: inherit;
-  font-size: clamp(11px, 1vw, 12px);
+  font-size: clamp(11px, 1.8cqw, 12px)!important;
   font-weight: 400;
   color: #26364f;
 }

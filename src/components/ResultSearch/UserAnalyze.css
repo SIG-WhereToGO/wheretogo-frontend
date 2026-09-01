@@ -16,78 +16,6 @@
   padding: 10px 14px 10px 20px;
 }
 
-.region-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  width: 100%;
-  min-height: 28px;
-
-  box-sizing: border-box;
-}
-
-.region-group-title {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-
-  height: 24px;
-  padding-left: 9px;
-  padding-right: 4px;
-
-  box-sizing: border-box;
-
-  font-size: 12px;
-  font-weight: 700;
-  color: #19365c;
-
-  white-space: nowrap;
-}
-
-/* 지역 태그 왼쪽 세로 바 */
-.region-group-title::before {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 2px;
-  height: 21px;
-
-  background-color: #2f6fe0;
-  border-radius: 2px;
-}
-
-.region-name {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 24px;
-  height: 24px;
-
-  padding: 0 10px;
-
-  box-sizing: border-box;
-
-  border: 1px solid #d5e2f0;
-  border-radius: 6px;
-
-  background-color: #f5f8fc;
-
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1;
-
-  color: #365a82;
-
-  white-space: nowrap;
-}
-
 /* 동반자 / 여행 스타일 각각의 그룹 */
 .tag-group {
   display: flex;
@@ -128,9 +56,10 @@
   width: 2px;
   height: 21px;
 
-  background-color: #4f8f8c;
+  background-color: var(--bar-color);
   border-radius: 1px;
 }
+
 /* 태그들을 가로로 배치 */
 .tag-list {
   display: flex;
@@ -155,16 +84,16 @@
 
   box-sizing: border-box;
 
-  border: 1px solid #d5e2f0;
+  border: 1px solid var(--tag-border) /*#d5e2f0*/;
   border-radius: 6px;
 
-  background-color: #f5f8fc;
+  background-color: var(--tag-bg) /*#f5f8fc*/;
 
   font-size: clamp(11px, 0.7vw, 13px);
   font-weight: 500;
   line-height: 1;
 
-  color: #365a82;
+  color: var(--tag-text) /*#365a82*/;
 
   white-space: nowrap;
 }

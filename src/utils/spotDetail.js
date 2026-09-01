@@ -130,6 +130,8 @@ const KEY_LABELS = {
   relapurcprdlst: '구매 가능 품목',
   relarntlprdlst: '대여 가능 품목',
   etcacmpyinfo: '기타 동반 정보',
+  acmpyneedmtr: '동반 시 필요사항',
+  acmpypsblcpam: '동반 가능 범위',
 };
 
 const TOURISM_KEY_SUFFIXES = [
