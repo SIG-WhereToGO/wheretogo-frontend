@@ -1,0 +1,58 @@
+.result-search-summary {
+  width: 100%;
+  margin: 14px 0 24px;
+}
+
+.results-title {
+  margin: 24px 0 20px;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 800;
+  color: #172b4d;
+  letter-spacing: -1px;
+}
+
+/* 검색어 */
+.result-query {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.result-query-label {
+  flex-shrink: 0;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: 600;
+  color: #26364f;
+}
+
+.result-query-text {
+  min-width: 0;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: 400;
+  color: #64748b;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .result-search-summary {
+    margin: 12px 0 20px;
+  }
+
+  .result-query {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .result-query-label {
+    font-size: 12px;
+  }
+
+  .result-query-text {
+    font-size: 12px;
+  }
+}

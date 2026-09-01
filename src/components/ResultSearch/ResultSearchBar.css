@@ -4,8 +4,8 @@
   gap: 8px;
 
   width: 100%;
-  max-width: clamp(500px, 60vw, 650px);
-  height: 38px;
+  max-width: clamp(500px, 60vw, 650px) !important;
+  height: clamp(39px, 3vw, 42px) !important;
   box-sizing: border-box;
 
   margin: 0 auto;
@@ -29,9 +29,11 @@
 
 .search-row svg {
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  color: #536174;
+  flex: 0 0 3%;
+  align-self: center;
+  color: var(--ink-soft);
+  width: clamp(12px, 0.9vw, 16px) !important;
+  height: clamp(15px, 1.3vw, 20px) !important;
 }
 
 .search-row input {
@@ -57,7 +59,7 @@
 
 .search-btn {
   flex-shrink: 0;
-  height: 32px;
+  height: 100%;
   padding: 0 clamp(12px, 1.3vw, 16px);
 
   border: none;
@@ -67,7 +69,7 @@
   color: #ffffff;
 
   font-family: inherit;
-  font-size: clamp(11px, 1vw, 12px);
+  font-size: clamp(13px, 1.2vw, 15px);
   font-weight: 600;
 
   cursor: pointer;

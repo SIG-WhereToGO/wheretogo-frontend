@@ -1,8 +1,15 @@
-import "./UserTags.css";
+import "./UserAnalyze.css";
 
-export default function UserTags({ companionTags, styleTags }) {
+export default function UserAnalyze({ region, companionTags, styleTags }) {
     return (
-        <div className="user-tags">
+        <div className="user-analyze">
+            {region && (
+            <div className="region-group">
+                <span className="region-group-title">지역 태그</span>
+                 <span className="region-name">{region}</span>
+            </div>
+            )}
+
             {companionTags?.length > 0 && (
             <div className="tag-group">
                 <span className="tag-group-title">동반자 유형 태그</span>

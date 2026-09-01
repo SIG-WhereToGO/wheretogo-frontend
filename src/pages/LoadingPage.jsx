@@ -66,6 +66,11 @@ export default function LoadingPage() {
           throw new Error('request_id를 받지 못했습니다.');
         }
 
+        const region = analyzeRes?.region;
+         if (!region) {
+          throw new Error('region을 받지 못했습니다.');
+        }
+
         // 2) request_id로 추천 결과(TOP 15 + 상세정보) 조회
         const recRes = await fetchRecommendations(requestId);
         
@@ -87,7 +92,7 @@ export default function LoadingPage() {
               requestId,
               spots,
               userTags,
-              region: recRes?.input_analysis_info?.region,
+              region,
             },
           });
         }, 400);

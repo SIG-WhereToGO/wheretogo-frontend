@@ -4,7 +4,7 @@ import TopBar from '../components/TopBar'
 import SpotCard from '../components/SpotCard';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/ResultSearch/ResultSearchBar';
-import UserTags from '../components/ResultSearch/UserTags';
+import ResultSearchSummary from '../components/ResultSearch/ResultSearchSummary';
 import SpotDetailModal from '../components/SpotDetailModal';
 import './ResultsPage.css';
 
@@ -67,7 +67,9 @@ export default function ResultsPage() {
 
           <SearchBar onSearch={handleSearch} />
 
-          <UserTags
+          <ResultSearchSummary
+            query={query}
+            region={region}
             companionTags={userTags?.companionTags}
             styleTags={userTags?.styleTags}
           />
